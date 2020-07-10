@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace HomeworkExamTracker.Data
 {
@@ -6,22 +7,34 @@ namespace HomeworkExamTracker.Data
     {
         public void AddSubject(Subject subject)
         {
-            throw new System.NotImplementedException();
+            SubjectData.Subjects.Add(subject);
         }
 
         public void DeleteSubject(int subjectId)
         {
-            throw new System.NotImplementedException();
+            var subject = SubjectData.Subjects.Find(s => s.Id == subjectId);
+
+            if(subject != null)
+            {
+                SubjectData.Subjects.Remove(subject);
+            }
         }
 
         public void UpdateSubject(int subjectId, Subject updatedSubject)
         {
-            throw new System.NotImplementedException();
+            var prevSubject = SubjectData.Subjects.Find(s => s.Id == subjectId);
+
+            if(prevSubject != null)
+            {
+                prevSubject.Name = updatedSubject.Name;
+                prevSubject.TeacherId = updatedSubject.TeacherId;
+                prevSubject.HomeworkIds= null;
+            }
         }
 
         public List<Subject> GetAllSubject()
         {
-            throw new System.NotImplementedException();
+            return SubjectData.Subjects.ToList();
         }
     }
 }

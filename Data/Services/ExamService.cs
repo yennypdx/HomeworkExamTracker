@@ -6,27 +6,46 @@ namespace HomeworkExamTracker.Data
     {
         public void AddExam(Exam exam)
         {
-            throw new System.NotImplementedException();
+            ExamData.Exams.Add(exam);
         }
 
         public void DeleteExam(int examId)
         {
-            throw new System.NotImplementedException();
+            var exam = ExamData.Exams.Find(e => e.Id == examId);
+
+            if(exam != null)
+            {
+                ExamData.Exams.Remove(exam);
+            }
         }
 
         public void UpdateExam(int examId, Exam updatedExam)
         {
-            throw new System.NotImplementedException();
+            var prevExam = ExamData.Exams.Find(e => e.Id == examId);
+
+            if(prevExam != null)
+            {
+                prevExam.Description = updatedExam.Description;
+                prevExam.ExamDate = updatedExam.ExamDate;
+            }
         }
 
-        public List<Exam> GetAllExamPerSubject(int examId)
+        public List<Exam> GetAllExamPerSubject(int examId, int subjectId)
         {
-            throw new System.NotImplementedException();
+            var exams = new List<Exam>();            
+            foreach(Exam ex in ExamData.Exams)
+            {
+                if(ex.Id == examId && ex.SubjectId == subjectId)
+                {
+                    exams.Add(ex);
+                }
+            }
+            return exams;
         }
 
         public Exam GetSingleExam(int examId)
         {
-            throw new System.NotImplementedException();
+            return ExamData.Exams.Find(e => e.Id == examId);
         }
     }
 }

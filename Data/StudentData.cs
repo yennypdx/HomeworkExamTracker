@@ -10,7 +10,8 @@ namespace HomeworkExamTracker.Data
             new Student()
             {
                 Id=1,
-                Name="Cleopatra",
+                Name="Cleopatra Russ",
+                Email="cleopatraruss@scool.org",
                 TeacherIds={1,2},
                 SubjectIds={1,2}
             }
