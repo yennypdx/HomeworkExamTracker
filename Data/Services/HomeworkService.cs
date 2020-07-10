@@ -14,6 +14,11 @@ namespace HomeworkExamTracker.Data
             throw new System.NotImplementedException();
         }
 
+        public void UpdateHomework(int homeworkId, Homework updatedHomework)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public List<Homework> GetAllHomeworkPerSubject(int subjectId)
         {
             throw new System.NotImplementedException();

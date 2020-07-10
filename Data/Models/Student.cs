@@ -6,7 +6,7 @@ namespace HomeworkExamTracker.Data
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<Teacher> Teachers { get; set; }
-        public List<Subject> Subjects { get; set; }
+        public List<int> TeacherIds { get; set; }
+        public List<int> SubjectIds { get; set; }
     }
 }

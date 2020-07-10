@@ -14,6 +14,11 @@ namespace HomeworkExamTracker.Data
             throw new System.NotImplementedException();
         }
 
+        public void UpdateExam(int examId, Exam updatedExam)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public List<Exam> GetAllExamPerSubject(int examId)
         {
             throw new System.NotImplementedException();

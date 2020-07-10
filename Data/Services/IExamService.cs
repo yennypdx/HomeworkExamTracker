@@ -8,5 +8,6 @@ namespace HomeworkExamTracker.Data
         Exam GetSingleExam(int examId);
         void AddExam(Exam exam);
         void DeleteExam(int examId);
+        void UpdateExam(int examId, Exam updatedExam);
     }
 }

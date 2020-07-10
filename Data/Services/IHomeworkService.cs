@@ -8,5 +8,7 @@ namespace HomeworkExamTracker.Data
         Homework GetSingleHomework(int homewordId);
         void AddHomework(Homework homework);
         void DeleteHomework(int homeworkId);
+
+        void UpdateHomework(int homeworkId, Homework updatedHomework);
     }
 }
