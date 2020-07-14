@@ -1,3 +1,4 @@
+using HomeworkExamTracker.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +29,13 @@ namespace HomeworkExamTracker
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+            // Adding all HET services
+            services.AddTransient<IStudentService, StudentService>();
+            services.AddTransient<ITeacherService, TeacherService>();
+            services.AddTransient<ISubjectService, SubjectService>();
+            services.AddTransient<IHomeworkService, HomeworkService>();
+            services.AddTransient<IExamService, ExamService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

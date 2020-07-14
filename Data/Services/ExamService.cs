@@ -30,13 +30,11 @@ namespace HomeworkExamTracker.Data
             }
         }
 
-        public List<Exam> GetAllExamPerSubject(int examId, int subjectId)
+        public List<Exam> GetAllExamPerSubject(int subjectId)
         {
             var exams = new List<Exam>();            
-            foreach(Exam ex in ExamData.Exams)
-            {
-                if(ex.Id == examId && ex.SubjectId == subjectId)
-                {
+            foreach(Exam ex in ExamData.Exams) {
+                if(ex.SubjectId == subjectId) {
                     exams.Add(ex);
                 }
             }
